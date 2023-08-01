@@ -10,7 +10,11 @@ const NewsBox = () => {
       </div>
       <div id="text-box">
         <div id="text-box-header">
-          <img src="./images/bbc-logo.jpg" alt="Logo" className="logo-image" />
+          <img
+            src="./images/bbc-logo.jpg"
+            alt="Logo"
+            id="news-box-logo-image"
+          />
           <h2>BBC News</h2>
           <p>• 10 min. ago</p>
         </div>
