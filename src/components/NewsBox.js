@@ -27,7 +27,7 @@ const NewsBox = () => {
           People spend night on roofs and in trees after Ukraine dam breach.
           <button className="read-more-button">Read More</button>
         </p>
-        <p>August 1, 2023</p>
+        <p className="date-label">August 1, 2023</p>
       </div>
     </div>
   );

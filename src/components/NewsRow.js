@@ -22,7 +22,7 @@ const NewsRow = () => {
         <h5>
           People spend night on roofs and in trees after Ukraine dam breach
         </h5>
-        <p>August 1, 2023</p>
+        <p className="date-label">August 1, 2023</p>
       </div>
     </div>
   );

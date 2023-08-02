@@ -12,6 +12,26 @@ code {
     monospace;
 }
 
+p {
+  color: gray;
+}
+
+.date-label {
+  color: red;
+  font-weight: 500;
+}
+
+.App {
+  background-color: #efefef;
+}
+
+#news-container {
+  background-color: white;
+  padding: 50px;
+  border-radius: 20px;
+  align-content: space-evenly;
+}
+
 #first-section {
   display: flex;
   align-items: center; /* Center items vertically */
@@ -104,7 +124,28 @@ code {
   display: flex;
   flex-direction: column; /* Arrange items vertically */
   align-items: left; /* Center items horizontally */
-  width: 400px;
+  width: 350px;
   padding: 10px;
   justify-content: space-evenly;
+}
+
+#second-section {
+  margin: 50px;
+}
+
+#news-column {
+  width: 300px;
+}
+
+#news-column-image-container {
+  height: 300px;
+  width: 300px;
+  overflow: hidden;
+}
+
+#news-column-image {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
