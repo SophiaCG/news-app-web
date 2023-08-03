@@ -1,3 +1,5 @@
+import { calculateTimeDifference, formatDate } from "../App";
+
 const NewsBox = ({ props }) => {
   return (
     <div id="news-box">
@@ -12,14 +14,16 @@ const NewsBox = ({ props }) => {
             id="news-box-logo-image"
           />
           <h4>{props.source.name}</h4>
-          <p>• 10 min. ago</p>
+          <p className="time-label">
+            • {calculateTimeDifference(props.publishedAt)}
+          </p>
         </div>
         <h3>{props.title}</h3>
         <p>
           {props.description}
           <button className="read-more-button">Read More</button>
         </p>
-        <p className="date-label">August 1, 2023</p>
+        <p className="date-label">{formatDate(props.publishedAt)}</p>
       </div>
     </div>
   );

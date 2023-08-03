@@ -1,3 +1,5 @@
+import { calculateTimeDifference, formatDate } from "../App";
+
 const NewsRow = ({ props }) => {
   return (
     <div id="news-row">
@@ -13,10 +15,12 @@ const NewsRow = ({ props }) => {
             id="news-row-logo-image"
           />
           <h5>{props.source.name}</h5>
-          <p>• 10 min. ago</p>
+          <p className="time-label">
+            • {calculateTimeDifference(props.publishedAt)}
+          </p>
         </div>
         <h5>{props.title}</h5>
-        <p className="date-label">August 1, 2023</p>
+        <p className="date-label">{formatDate(props.publishedAt)}</p>
       </div>
     </div>
   );
