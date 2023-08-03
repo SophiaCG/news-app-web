@@ -185,12 +185,9 @@ img {
 
 #news-column-group {
   display: grid; /* Use CSS Grid */
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(350px, 1fr)
-  ); /* Adjust as needed */
+  grid-template-columns: repeat(auto-fit, 350px);
   justify-content: center;
-  gap: 30px; /* Add some gap between the divs */
+  gap: 60px; /* Add some gap between the divs */
 }
 
 @media (max-width: 1700px) {
