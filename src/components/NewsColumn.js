@@ -8,12 +8,18 @@ const NewsColumn = ({ props }) => {
   return (
     <div id="news-column">
       <div id="news-column-image-container">
-        <img
-          src={props.urlToImage}
-          alt="Image"
-          id="news-column-image"
-          onClick={handleTap}
-        />
+        {/* Show the image if available, otherwise render a placeholder or any other content */}
+        {props.urlToImage != null ? (
+          <img
+            src={props.urlToImage}
+            alt="Image"
+            id="news-column-image"
+            onClick={handleTap}
+          />
+        ) : (
+          <div className="no-image-placeholder">No Image Available</div>
+          // You can also render nothing here, or any other content as needed
+        )}
       </div>
 
       <div id="text-box-header">

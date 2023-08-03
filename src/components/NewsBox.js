@@ -8,12 +8,18 @@ const NewsBox = ({ props }) => {
   return (
     <div id="news-box">
       <div id="image-container">
-        <img
-          src={props.urlToImage}
-          alt="Image"
-          id="news-box-image"
-          onClick={handleTap}
-        />
+        {/* Show the image if available, otherwise render a placeholder or any other content */}
+        {props.urlToImage != null ? (
+          <img
+            src={props.urlToImage}
+            alt="Image"
+            id="news-box-image"
+            onClick={handleTap}
+          />
+        ) : (
+          <div className="no-image-placeholder">No Image Available</div>
+          // You can also render nothing here, or any other content as needed
+        )}
       </div>
       <div id="text-box">
         <div id="text-box-header">
@@ -22,7 +28,7 @@ const NewsBox = ({ props }) => {
             alt="Logo"
             id="news-box-logo-image"
           />
-          <h4>{props.source.name}</h4>
+          <h4>{props.source != null ? props.source.name : ""}</h4>
           <p className="time-label">
             • {calculateTimeDifference(props.publishedAt)}
           </p>

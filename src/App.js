@@ -1,3 +1,4 @@
+// src/App.js
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBar from "./components/NavBar";
@@ -9,19 +10,26 @@ function App() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    // Make the API call using fetch
-    fetch("https://newsapi.org/v2/top-headlines?country=us&apiKey=")
-      .then((response) => response.json()) // Parse the response as JSON
+  // Modify the fetchData function to accept a query parameter
+  const fetchData = (query) => {
+    setLoading(true);
+
+    fetch(`https://newsapi.org/v2/everything?q=${query}&apiKey=`)
+      .then((response) => response.json())
       .then((data) => {
         setData(data);
         setLoading(false);
-        console.log(data.articles[0].title);
+        console.log(URL);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
         setLoading(false);
       });
+  };
+
+  useEffect(() => {
+    // Make the initial API call with the default query "us"
+    fetchData("us");
   }, []);
 
   if (loading) {
@@ -34,7 +42,8 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar></NavBar>
+      {/* Pass the fetchData function to the NavBar component */}
+      <NavBar fetchData={fetchData} />
       <div id="news-container">
         <div id="first-section">
           <NewsBox props={data.articles[0]}></NewsBox>
