@@ -25,6 +25,14 @@ p {
   font-weight: 500;
 }
 
+.title-label {
+  cursor: pointer;
+}
+
+img {
+  cursor: pointer;
+}
+
 .navbar-brand {
   font-weight: bold;
 }
