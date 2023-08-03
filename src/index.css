@@ -16,6 +16,12 @@ p {
   color: gray;
 }
 
+.icon {
+  color: #1e3050;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
 .time-label {
   width: 120px;
 }
@@ -98,6 +104,7 @@ img {
 #text-box-header {
   display: flex;
   align-items: center;
+  justify-content: left;
   height: 60px;
   margin-top: 5px;
   margin-bottom: 5px;
@@ -105,6 +112,12 @@ img {
 
 #text-box-header > * {
   margin: 0 5px;
+}
+
+#header-bookmark-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .read-more-button {

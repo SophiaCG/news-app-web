@@ -1,4 +1,5 @@
 import { calculateTimeDifference, formatDate } from "../App";
+import Bookmark from "./Bookmark";
 
 const NewsColumn = ({ props }) => {
   const handleTap = () => {
@@ -22,12 +23,19 @@ const NewsColumn = ({ props }) => {
         )}
       </div>
 
-      <div id="text-box-header">
-        <img src="./images/bbc-logo.jpg" alt="Logo" id="news-row-logo-image" />
-        <h5>{props.source.name}</h5>
-        <p className="time-label">
-          • {calculateTimeDifference(props.publishedAt)}
-        </p>
+      <div id="header-bookmark-container">
+        <div id="text-box-header">
+          <img
+            src="./images/bbc-logo.jpg"
+            alt="Logo"
+            id="news-row-logo-image"
+          />
+          <h5>{props.source.name}</h5>
+          <p className="time-label">
+            • {calculateTimeDifference(props.publishedAt)}
+          </p>
+        </div>
+        <Bookmark></Bookmark>
       </div>
       <h4 className="title-label" onClick={handleTap}>
         {props.title}
