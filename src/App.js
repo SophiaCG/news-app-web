@@ -1,10 +1,13 @@
 // src/App.js
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBar from "./components/NavBar";
 import NewsBox from "./components/NewsBox";
 import NewsRowGroup from "./components/NewsRowGroup";
 import NewsColumnGroup from "./components/NewsColumnGroup";
+import BookmarksButton from "./components/BookmarksButton";
+import ArticleList from "./components/ArticleList";
 
 function App() {
   const [data, setData] = useState(null);
@@ -45,6 +48,12 @@ function App() {
       {/* Pass the fetchData function to the NavBar component */}
       <NavBar fetchData={fetchData} />
       <div id="news-container">
+        <div id="header-container">
+          <div id="header-container">
+            <h1 id="news-header">The News</h1>
+            <BookmarksButton />
+          </div>
+        </div>
         <div id="first-section">
           <NewsBox props={data.articles[0]}></NewsBox>
           <NewsRowGroup data={data}></NewsRowGroup>

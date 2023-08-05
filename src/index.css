@@ -16,10 +16,43 @@ p {
   color: gray;
 }
 
+#news-header {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 5rem;
+  font-weight: bold;
+}
+
 .icon {
   color: #1e3050;
   font-size: 1.5rem;
   cursor: pointer;
+}
+
+#icon-button {
+  color: blue;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+#header-container {
+  text-align: center; /* To center the content horizontally */
+  margin-bottom: 12px;
+}
+
+#bookmark-button-container {
+  display: flex; /* Use flexbox */
+  border: 2px blue solid;
+  border-radius: 10px;
+  padding: 20px;
+  height: 65px;
+  width: 65px;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+}
+
+#header-container {
+  display: grid;
+  grid-template-columns: 1fr auto; /* Columns will take available space, auto for right content */
 }
 
 .time-label {
