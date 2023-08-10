@@ -1,6 +1,6 @@
 import React from "react";
 
-const ArticleList = () => {
+const BookmarksPage = () => {
   return (
     <div>
       {/* Your content for the new page goes here */}
@@ -10,4 +10,4 @@ const ArticleList = () => {
   );
 };
 
-export default ArticleList;
+export default BookmarksPage;

@@ -1,68 +1,16 @@
-// src/App.js
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
-import NavBar from "./components/NavBar";
-import NewsBox from "./components/NewsBox";
-import NewsRowGroup from "./components/NewsRowGroup";
-import NewsColumnGroup from "./components/NewsColumnGroup";
-import BookmarksButton from "./components/BookmarksButton";
-import ArticleList from "./components/ArticleList";
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import HomePage from "./HomePage";
+import BookmarksPage from "./BookmarksPage";
 
 function App() {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
-
-  // Modify the fetchData function to accept a query parameter
-  const fetchData = (query) => {
-    setLoading(true);
-
-    fetch(`https://newsapi.org/v2/everything?q=${query}&apiKey=`)
-      .then((response) => response.json())
-      .then((data) => {
-        setData(data);
-        setLoading(false);
-        console.log(URL);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-        setLoading(false);
-      });
-  };
-
-  useEffect(() => {
-    // Make the initial API call with the default query "us"
-    fetchData("us");
-  }, []);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (!data || !data.articles) {
-    return <div>No articles found.</div>;
-  }
-
   return (
-    <div className="App">
-      {/* Pass the fetchData function to the NavBar component */}
-      <NavBar fetchData={fetchData} />
-      <div id="news-container">
-        <div id="header-container">
-          <div id="header-container">
-            <h1 id="news-header">The News</h1>
-            <BookmarksButton />
-          </div>
-        </div>
-        <div id="first-section">
-          <NewsBox props={data.articles[0]}></NewsBox>
-          <NewsRowGroup data={data}></NewsRowGroup>
-        </div>
-        <div id="second-section">
-          <NewsColumnGroup data={data}></NewsColumnGroup>
-        </div>
-      </div>
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/" exact component={HomePage} />
+        <Route path="/bookmarks" component={BookmarksPage} />
+      </Switch>
+    </Router>
   );
 }
 
