@@ -4,8 +4,9 @@ import BookmarksRow from "./BookmarksRow";
 const BookmarksRowGroup = ({ data }) => {
   const renderRows = () => {
     const rows = [];
-    for (let i = 1; i < 5; i++) {
-      rows.push(<BookmarksRow props={data.articles[i]}></BookmarksRow>);
+
+    for (let i = 0; i < data.length; i++) {
+      rows.push(<BookmarksRow props={data[i]}></BookmarksRow>);
     }
     return rows;
   };

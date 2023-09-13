@@ -10,9 +10,9 @@ const BookmarksRow = ({ props }) => {
     <div id="bookmarks-row">
       <div id="bookmarks-row-image-container">
         {/* Show the image if available, otherwise render a placeholder or any other content */}
-        {props.urlToImage != null ? (
+        {props.image != null ? (
           <img
-            src={props.urlToImage}
+            src={props.image}
             alt="Image"
             id="news-row-image"
             onClick={handleTap}
@@ -28,10 +28,10 @@ const BookmarksRow = ({ props }) => {
             <img
               src="./images/bbc-logo.jpg"
               alt="Logo"
-              id="news-row-logo-image"
+              id="bookmarks-row-logo-image"
               onClick={handleTap}
             />
-            <h5>{props.source.name}</h5>
+            <h5>{props.source}</h5>
             <p className="time-label">
               • {calculateTimeDifference(props.publishedAt)}
             </p>
@@ -42,7 +42,7 @@ const BookmarksRow = ({ props }) => {
           {props.title}
         </h5>
         <p>
-          {props.description}
+          {props.desc}
           <button className="read-more-button" onClick={handleTap}>
             Read More
           </button>

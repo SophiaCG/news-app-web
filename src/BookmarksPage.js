@@ -1,9 +1,35 @@
 import React, { useState, useEffect } from "react";
 import BookmarksRowGroup from "./components/BookmarksRowGroup";
+import axios from "axios";
 
 const BookmarksPage = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
+
+  const [books, setBooks] = useState([]);
+
+  useEffect(() => {
+    const fetchAllBooks = async () => {
+      try {
+        const res = await axios.get("http://localhost:8800/bookmarks");
+        setBooks(res.data);
+      } catch (err) {
+        console.log(`ERROR: ${err.toString()}`);
+      }
+    };
+    fetchAllBooks();
+  }, []);
+
+  console.log(`NEWS: ${books}`);
+
+  // const handleDelete = async (id) => {
+  //   try {
+  //     await axios.delete(`http://localhost:8800/bookmarks/${id}`);
+  //     window.location.reload();
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
 
   // Modify the fetchData function to accept a query parameter
   const fetchData = (query) => {
@@ -39,7 +65,7 @@ const BookmarksPage = () => {
 
   return (
     <div>
-      <BookmarksRowGroup data={data}></BookmarksRowGroup>
+      <BookmarksRowGroup data={books}></BookmarksRowGroup>
     </div>
   );
 };
