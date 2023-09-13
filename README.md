@@ -1,3 +1,7 @@
+# News App
+
+Simple web application that pulls news articles from News API and displays the articles using React. Bookmarked articles will be saved using MySQL database. 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
