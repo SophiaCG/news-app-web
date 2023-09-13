@@ -1,16 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaRegBookmark, FaBookmark } from "react-icons/fa";
 import axios from "axios";
 
-const Bookmark = ({ props }) => {
+const Bookmark = ({ props, isBookmarksRow = false }) => {
   const [isBookmarked, setIsBookmarked] = useState(false);
 
-  const toggleBookmark = () => {
-    setIsBookmarked((prevIsBookmarked) => !prevIsBookmarked);
-  };
+  useEffect(() => {
+    const fetchAllBooks = async () => {
+      try {
+        const res = await axios.get("http://localhost:8800/bookmarks");
+        setIsBookmarked(res.data.some((obj) => obj.title === props.title));
+      } catch (err) {
+        console.log(`ERROR: ${err.toString()}`);
+      }
+    };
+    fetchAllBooks();
+  }, []);
 
   const addBookmark = async () => {
-    console.log(`TITLE: ${props.title}`);
     try {
       // Create the object you want to add to the database
       const article = {
@@ -42,7 +49,9 @@ const Bookmark = ({ props }) => {
     try {
       await axios.delete(`http://localhost:8800/bookmarks/${props.title}`);
       setIsBookmarked(false);
-      window.location.reload();
+      if (isBookmarksRow) {
+        window.location.reload();
+      }
     } catch (err) {
       console.log(err);
     }

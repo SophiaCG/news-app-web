@@ -224,6 +224,7 @@ img {
 }
 
 #bookmarks-row {
+  height: 300px;
   border: 2px gray solid;
   border-radius: 10px;
   display: flex;
@@ -231,13 +232,10 @@ img {
   margin: 50px;
 }
 
-#bookmarks-row {
-  height: 300px;
-}
-
 #bookmarks-row-image-container {
   height: 100%;
-  min-width: 250px;
+  min-width: 300px;
+  max-width: 300px;
 }
 
 #bookmarks-row-logo-image {
@@ -249,6 +247,7 @@ img {
 #bookmarks-row-column {
   /* margin-left: 30px; */
   padding: 20px;
+  width: 90%;
 }
 
 @media (max-width: 1700px) {
@@ -333,7 +332,7 @@ img {
 
   #bookmarks-row-image-container {
     border: 1px solid red;
-    width: 100%;
+    min-width: 100%;
     height: 100%;
     align-items: center;
     position: absolute;

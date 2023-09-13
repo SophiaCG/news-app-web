@@ -31,12 +31,12 @@ const BookmarksRow = ({ props }) => {
               id="bookmarks-row-logo-image"
               onClick={handleTap}
             />
-            <h5>{props.source}</h5>
+            <h5>{props.sourceName}</h5>
             <p className="time-label">
               • {calculateTimeDifference(props.publishedAt)}
             </p>
           </div>
-          <Bookmark props={props}></Bookmark>
+          <Bookmark props={props} isBookmarksRow={true}></Bookmark>
         </div>
         <h5 className="title-label" onClick={handleTap}>
           {props.title}

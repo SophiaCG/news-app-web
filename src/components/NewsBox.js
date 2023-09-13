@@ -35,7 +35,7 @@ const NewsBox = ({ props }) => {
               • {calculateTimeDifference(props.publishedAt)}
             </p>
           </div>
-          <Bookmark></Bookmark>
+          <Bookmark props={props}></Bookmark>
         </div>
         <h3 className="title-label" onClick={handleTap}>
           {props.title}
