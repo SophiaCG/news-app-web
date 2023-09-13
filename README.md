@@ -2,7 +2,13 @@
 
 Simple web application that pulls news articles from News API and displays the articles using React. Bookmarked articles will be saved using MySQL database. 
 
-# Getting Started with Create React App
+<img width="1788" alt="news-website" src="https://github.com/SophiaCG/news-app-web/assets/64823305/2bd7c202-742e-4b84-90bb-b5b13e3cc0e9">
+
+<img width="1792" alt="news-website-2" src="https://github.com/SophiaCG/news-app-web/assets/64823305/5e663105-b60a-446d-893a-bc5a9a3f05ec">
+
+<img width="1423" alt="news-website-3" src="https://github.com/SophiaCG/news-app-web/assets/64823305/3a878096-63c1-4de9-b1c2-8f11a0ca7573">
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
